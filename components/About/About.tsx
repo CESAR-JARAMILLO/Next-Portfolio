@@ -27,44 +27,24 @@ const About = () => {
             Developer
           </Title>
           <Text>
-            I'm a passionate web developer with experience in React, Next.js,
-            and modern UI frameworks. I specialize in building clean,
-            responsive, and high-performance applications.
+            I'm Cesar Jaramillo, a Web Developer based in Los Angeles,
+            California with over 4 years of experience. My expertise lies in
+            email marketing, content management with various CMS systems, and
+            building responsive pages using custom code. I pride myself on
+            tailoring solutions to my clients' specific needs, selecting the
+            best methods and technologies for each project. Whether working as
+            part of a team or independently, I have a track record of resolving
+            challenges efficiently and effectively, ensuring the highest level
+            of client satisfaction.
           </Text>
-          <Text>
-            My goal is to create digital solutions that enhance user experiences
-            and help businesses grow. When I'm not coding, I'm training for my
-            next marathon or creating content to inspire others.
-          </Text>
-          <Text>
-            I'm a passionate web developer with experience in React, Next.js,
-            and modern UI frameworks. I specialize in building clean,
-            responsive, and high-performance applications.
-          </Text>
-          <Text>
-            My goal is to create digital solutions that enhance user experiences
-            and help businesses grow. When I'm not coding, I'm training for my
-            next marathon or creating content to inspire others.
-          </Text>
-          <Text>
-            I'm a passionate web developer with experience in React, Next.js,
-            and modern UI frameworks. I specialize in building clean,
-            responsive, and high-performance applications.
-          </Text>
-          <Text>
-            My goal is to create digital solutions that enhance user experiences
-            and help businesses grow. When I'm not coding, I'm training for my
-            next marathon or creating content to inspire others.
-          </Text>
-          <Text>
-            I'm a passionate web developer with experience in React, Next.js,
-            and modern UI frameworks. I specialize in building clean,
-            responsive, and high-performance applications.
-          </Text>
-          <Text>
-            My goal is to create digital solutions that enhance user experiences
-            and help businesses grow. When I'm not coding, I'm training for my
-            next marathon or creating content to inspire others.
+          <Text mt={16}>
+            In my free time, you'll often find me embracing an active
+            lifestyle—whether that's hitting the gym, hiking, or exploring the
+            great outdoors. Beyond that, my passion extends to the arts; I am a
+            devoted classical guitar enthusiast. This blend of physical and
+            artistic pursuits keeps me balanced and continually fuels my
+            creative energy, enriching my professional work in content
+            management and web development.
           </Text>
         </Box>
       </Container>

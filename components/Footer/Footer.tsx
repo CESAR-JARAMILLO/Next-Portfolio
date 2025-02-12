@@ -77,7 +77,7 @@ const Footer = () => {
       </Container>
       <Container className={classes.afterFooter}>
         <Text c="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
+          © 2020 Cesar J Dev. All rights reserved.
         </Text>
 
         <Group

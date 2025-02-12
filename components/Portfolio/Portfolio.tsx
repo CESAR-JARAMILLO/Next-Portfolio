@@ -5,33 +5,40 @@ import classes from "./Portfolio.module.css";
 const portfolioProjects = [
   {
     image: "/shopify.png",
-    title: "E-Commerce Solutions with Shopify",
+    title: "Gymshark: Shopify Store",
     category: "Shopify",
+    password: "gymshark",
+    link: "https://gymsharkclothing.myshopify.com/",
   },
   {
     image: "/bizmorph.png",
-    title: "Email Marketing Automations",
+    title: "Bizmorph: Marketing Agency",
     category: "Wordpress",
+    link: "https://bizmorph.com/",
   },
   {
     image: "/coinbase.png",
-    title: "Custom Websites with WordPress",
+    title: "Coinbase: Landing Page Clone",
     category: "HTML/CSS",
+    link: "https://cesar-jaramillo.github.io/coinbase-clone/",
   },
   {
     image: "/clothing-shop.png",
-    title: "Modern Web Apps with Next.js",
+    title: "Saks Fifth Avenue: Clothing Store",
     category: "HTML Email",
+    link: "https://cesar-jaramillo.github.io/clothing-shop-email/",
   },
   {
     image: "/waves.png",
-    title: "Interactive UIs with React",
+    title: "Waves: Music Streaming Service",
     category: "HTML Email",
+    link: "https://cesar-jaramillo.github.io/waves-email/",
   },
   {
     image: "/ecamm-zoom.png",
-    title: "SEO Optimization Strategies",
+    title: "Ecamm-Zoom: Video Conferencing",
     category: "HTML Email",
+    link: "https://cesar-jaramillo.github.io/ecamm-email/",
   },
 ];
 
@@ -57,6 +64,8 @@ const Portfolio = () => {
             image={project.image}
             title={project.title}
             category={project.category}
+            password={project.password}
+            link={project.link}
           />
         ))}
       </Box>

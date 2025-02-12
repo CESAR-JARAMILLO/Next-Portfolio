@@ -7,9 +7,17 @@ interface PortfolioCardProps {
   image: string;
   title: string;
   category: string;
+  password?: string;
+  link: string;
 }
 
-const PortfolioCard = ({ image, title, category }: PortfolioCardProps) => {
+const PortfolioCard = ({
+  image,
+  title,
+  category,
+  password,
+  link,
+}: PortfolioCardProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement | null>(null);
 
@@ -29,21 +37,33 @@ const PortfolioCard = ({ image, title, category }: PortfolioCardProps) => {
   }, []);
 
   return (
-    <Paper
-      ref={cardRef}
-      shadow="md"
-      className={`${classes.card} ${isVisible ? classes.isVisible : ""}`}
-      style={{ backgroundImage: `url(${image})` }}
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={classes.cardLink}
     >
-      <Box className={classes.textContainer}>
-        <Text className={classes.category} size="xs">
-          {category}
-        </Text>
-        <Title order={3} className={classes.title}>
-          {title}
-        </Title>
-      </Box>
-    </Paper>
+      <Paper
+        ref={cardRef}
+        shadow="md"
+        className={`${classes.card} ${isVisible ? classes.isVisible : ""}`}
+        style={{ backgroundImage: `url(${image})` }}
+      >
+        <Box className={classes.textContainer}>
+          <Text className={classes.category} size="xs">
+            {category}
+          </Text>
+          <Title order={3} className={classes.title}>
+            {title}
+          </Title>
+          {password && (
+            <Text className={classes.password} size="sm">
+              Password: <strong>{password}</strong>
+            </Text>
+          )}
+        </Box>
+      </Paper>
+    </a>
   );
 };
 

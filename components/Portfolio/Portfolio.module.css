@@ -1,0 +1,30 @@
+.portfolioSection {
+  background: #FFFBF2;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin: auto;
+}
+
+.title {
+  color: var(--mantine-color-black);
+  font-size: 42px;
+  text-align: center;
+  margin: 16px auto;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    max-width: 100%;
+    font-size: 34px;
+    line-height: 1.15;
+  }
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}

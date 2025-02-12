@@ -1,0 +1,60 @@
+/* Outer container - Full width background */
+.aboutOuterContainer {
+  width: 100%;
+  background: #FFF8E7;
+  padding: 4rem 0; /* Top and bottom padding */
+}
+
+/* Inner container - Centers content */
+.aboutInnerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  color: white;
+}
+
+.title {
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+/* Adjust the text color for readability */
+.textContent h2,
+.textContent p {
+  color: #000;
+}
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutImage {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.textContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .aboutInnerContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imageWrapper {
+    order: -1; /* Moves image on top */
+  }
+}

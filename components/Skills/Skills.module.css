@@ -1,0 +1,63 @@
+/* Full-width section with a clean background */
+.skillsOuterContainer {
+  width: 100%;
+  background: #11284b;
+  padding: 1.5rem 0;
+  overflow: hidden; /* Prevents horizontal scroll issues */
+  display: flex;
+  justify-content: center;
+}
+
+/* Infinite scrolling animation - Moves right */
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Slider container */
+.skillsSlider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Icons track (moves right infinitely) */
+.skillsTrack {
+  display: flex;
+  gap: 3rem;
+  animation: scrollRight 25s linear infinite;
+}
+
+.skillIcon {
+  height: 80px;
+  width: 80px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: brightness(0) invert(1); /* Converts black icons to white */
+}
+
+
+.skillIcon:hover {
+  filter: brightness(0) invert(50%) sepia(100%) saturate(600%) hue-rotate(-10deg);
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skillsTrack {
+    gap: 2rem;
+    animation-duration: 12s; /* Speed up on smaller screens */
+  }
+
+  .skillIcon {
+    width: 60px;
+    height: 60px;
+  }
+}

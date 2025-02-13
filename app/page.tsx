@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Portfolio from "@/components/Portfolio/Portfolio";
 import About from "@/components/About/About";
 import Skills from "@/components/Skills/Skills";
+import Contact from "@/components/Contact/Contact";
 
 export default function Home() {
   return (
@@ -21,9 +22,7 @@ export default function Home() {
           <Portfolio />
         </section>
         <section id="contact">
-          {/* <div style={{ height: "500px", textAlign: "center", color: "white" }}>
-            <h2>Contact Section</h2>
-          </div> */}
+          <Contact />
         </section>
       </main>
     </div>

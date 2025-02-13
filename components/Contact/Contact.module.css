@@ -1,0 +1,42 @@
+.contactContainer {
+  padding: 32px 0;
+  background: #FFF8E7;
+}
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  /* background: #FFFBF2; */
+  background: #11284B;
+  border-radius: 12px;
+  color: white;
+}
+
+.title {
+  color: var(--mantine-color-white);
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+  font-size: 32px;
+  text-align: center;
+}
+
+.formButton {
+  padding: 16px 40px;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.formButton:hover {
+  background-color: #fff;
+  color: #11284b;
+  transform: scale(1.05);
+}

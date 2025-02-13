@@ -1,12 +1,12 @@
 "use client";
 
 import {
-  IconBrandInstagram,
-  IconBrandTwitter,
-  IconBrandYoutube,
+  // IconBrandInstagram,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  // IconBrandYoutube,
 } from "@tabler/icons-react";
 import { ActionIcon, Container, Group, Image, Text } from "@mantine/core";
-import { MantineLogo } from "@mantinex/mantine-logo";
 import classes from "./Footer.module.css";
 import Link from "next/link";
 
@@ -87,13 +87,10 @@ const Footer = () => {
           wrap="nowrap"
         >
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter size={18} stroke={1.5} />
+            <IconBrandLinkedin size={18} stroke={1.5} />
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandYoutube size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandInstagram size={18} stroke={1.5} />
+            <IconBrandGithub size={18} stroke={1.5} />
           </ActionIcon>
         </Group>
       </Container>

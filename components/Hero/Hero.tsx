@@ -1,7 +1,15 @@
-import { Button, Container, Text, Title, Image } from "@mantine/core";
+"use client";
+
+import { Button, Container, Text, Title, Image, Box } from "@mantine/core";
+import { IconPlayerPlay } from "@tabler/icons-react";
+import Link from "next/link";
 import classes from "./Hero.module.css";
 
 const Hero = () => {
+  const handleVideoClick = () => {
+    console.log("Open intro video modal here.");
+  };
+
   return (
     <div className={classes.root}>
       <Container size="lg">
@@ -32,23 +40,28 @@ const Hero = () => {
               Marketing and CMS Solutions
             </Text>
 
-            <div className={classes.buttonGroup}>
-              <Button
-                variant="gradient"
-                gradient={{ from: "red", to: "yellow" }}
-                size="xl"
-                className={classes.control}
-              >
-                Get Started
-              </Button>
+            <Box className={classes.buttonGroup}>
+              <Link href="#contact" passHref>
+                <Button
+                  variant="gradient"
+                  gradient={{ from: "red", to: "yellow" }}
+                  size="xl"
+                  className={classes.control}
+                >
+                  Contact Me
+                </Button>
+              </Link>
+
               <Button
                 variant="outline"
                 size="xl"
                 className={classes.secondaryControl}
+                onClick={handleVideoClick}
               >
-                Contact Me
+                <IconPlayerPlay className={classes.icon} size={24} />
+                Watch Intro Video
               </Button>
-            </div>
+            </Box>
           </div>
         </div>
       </Container>

@@ -1,11 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import {
   Box,
   Button,
   Group,
   SimpleGrid,
-  Text,
   Textarea,
   TextInput,
   Title,
@@ -14,81 +14,81 @@ import { useForm } from "@mantine/form";
 import classes from "./Contact.module.css";
 
 const Contact = () => {
+  const [status, setStatus] = useState<"pending" | "ok" | "error" | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
   const form = useForm({
-    initialValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-    validate: {
-      name: (value) => value.trim().length < 2,
-      email: (value) => !/^\S+@\S+$/.test(value),
-      subject: (value) => value.trim().length === 0,
-    },
+    initialValues: { name: "", email: "", subject: "", message: "" },
   });
 
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    await fetch("/__forms.html", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData as any).toString(),
-    });
+    try {
+      setStatus("pending");
+      const formData = new FormData(event.currentTarget);
+      const res = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+      if (res.status === 200) setStatus("ok");
+      else {
+        setStatus("error");
+        setError(`${res.status} ${res.statusText}`);
+      }
+    } catch (e) {
+      setStatus("error");
+      setError(String(e));
+    }
   };
 
   return (
     <Box className={classes.contactContainer}>
-      <form className={classes.form} onSubmit={handleFormSubmit}>
+      <form className={classes.form} onSubmit={handleFormSubmit} name="contact">
+        <input type="hidden" name="form-name" value="contact" />
         <Title order={2} className={classes.title}>
           Get In Touch
         </Title>
-
-        <input type="hidden" name="form-name" value="contact" />
-
         <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
           <TextInput
             label="Name"
-            placeholder="Your name"
             name="name"
             variant="filled"
             {...form.getInputProps("name")}
           />
           <TextInput
             label="Email"
-            placeholder="Your email"
             name="email"
             variant="filled"
             {...form.getInputProps("email")}
           />
         </SimpleGrid>
-
         <TextInput
           label="Subject"
-          placeholder="Subject"
-          mt="md"
           name="subject"
           variant="filled"
           {...form.getInputProps("subject")}
+          mt="md"
         />
         <Textarea
-          mt="md"
           label="Message"
-          placeholder="Your message"
-          maxRows={10}
-          minRows={5}
-          autosize
           name="message"
           variant="filled"
           {...form.getInputProps("message")}
+          mt="md"
         />
-
         <Group justify="center" mt="xl">
-          <Button variant="outline" size="xl" className={classes.formButton}>
-            Send Message
+          <Button
+            variant="outline"
+            size="xl"
+            className={classes.formButton}
+            disabled={status === "pending"}
+          >
+            {status === "pending" ? "Submitting..." : "Send Message"}
           </Button>
         </Group>
+        {status === "ok" && <p className={classes.success}>Message sent!</p>}
+        {status === "error" && <p className={classes.error}>Error: {error}</p>}
       </form>
     </Box>
   );

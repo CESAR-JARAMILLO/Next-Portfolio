@@ -83,6 +83,7 @@ const Contact = () => {
             size="xl"
             className={classes.formButton}
             disabled={status === "pending"}
+            type="submit"
           >
             {status === "pending" ? "Submitting..." : "Send Message"}
           </Button>

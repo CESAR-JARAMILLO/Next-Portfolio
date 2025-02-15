@@ -50,14 +50,12 @@ const PortfolioCard = ({
         style={{ backgroundImage: `url(${image})` }}
       >
         <Box className={classes.textContainer}>
-          <Text className={classes.category} size="xs">
-            {category}
-          </Text>
+          <Text className={classes.category}>{category}</Text>
           <Title order={3} className={classes.title}>
             {title}
           </Title>
           {password && (
-            <Text className={classes.password} size="sm">
+            <Text className={classes.password}>
               Password: <strong>{password}</strong>
             </Text>
           )}

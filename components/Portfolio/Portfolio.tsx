@@ -45,7 +45,7 @@ const portfolioProjects = [
 const Portfolio = () => {
   return (
     <Box className={classes.portfolioSection}>
-      <Title order={1} className={classes.title}>
+      <Title order={2} className={classes.title}>
         My{" "}
         <Text
           component="span"

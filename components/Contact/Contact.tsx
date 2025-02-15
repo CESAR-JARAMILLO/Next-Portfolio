@@ -40,13 +40,7 @@ const Contact = () => {
 
   return (
     <Box className={classes.contactContainer}>
-      <form
-        className={classes.form}
-        onSubmit={handleFormSubmit}
-        data-netlify="true"
-        name="contact"
-        method="POST"
-      >
+      <form className={classes.form} onSubmit={handleFormSubmit}>
         <Title order={2} className={classes.title}>
           Get In Touch
         </Title>

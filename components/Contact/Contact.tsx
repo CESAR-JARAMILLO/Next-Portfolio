@@ -28,11 +28,21 @@ const Contact = () => {
     },
   });
 
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    await fetch("/__forms.html", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString(),
+    });
+  };
+
   return (
     <Box className={classes.contactContainer}>
       <form
         className={classes.form}
-        onSubmit={form.onSubmit(() => {})}
+        onSubmit={handleFormSubmit}
         data-netlify="true"
         name="contact"
         method="POST"

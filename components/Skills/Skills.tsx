@@ -11,6 +11,7 @@ const skills = [
   { icon: "/canva.svg" },
   { icon: "/photoshop.svg" },
   { icon: "/figma.svg" },
+  { icon: "/chatgpt.svg" },
   { icon: "/litmus.svg" },
   { icon: "/html.svg" },
   { icon: "/css.svg" },

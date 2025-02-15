@@ -30,10 +30,18 @@ const Contact = () => {
 
   return (
     <Box className={classes.contactContainer}>
-      <form className={classes.form} onSubmit={form.onSubmit(() => {})}>
+      <form
+        className={classes.form}
+        onSubmit={form.onSubmit(() => {})}
+        data-netlify="true"
+        name="contact"
+        method="POST"
+      >
         <Title order={2} className={classes.title}>
           Get In Touch
         </Title>
+
+        <input type="hidden" name="form-name" value="contact" />
 
         <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
           <TextInput

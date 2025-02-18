@@ -8,8 +8,8 @@ const About = () => {
       <Container size="xl" className={classes.aboutInnerContainer}>
         <Box className={classes.imageWrapperDesktop}>
           <Image
-            src="https://images.unsplash.com/photo-1531297484001-80022131f5a1"
-            alt="About me"
+            src="/cesar-baldy.jpg"
+            alt="Cesar Jaramillo"
             className={classes.aboutImage}
           />
         </Box>
@@ -23,46 +23,44 @@ const About = () => {
               variant="gradient"
               gradient={{ from: "red", to: "yellow" }}
             >
-              Web & Email
-            </Text>{" "}
-            Developer
+              Email Developer & Web Developer
+            </Text>
           </Title>
 
           <Box className={classes.imageWrapperMobile}>
             <Image
-              src="https://images.unsplash.com/photo-1531297484001-80022131f5a1"
-              alt="About me"
+              src="/cesar-baldy.jpg"
+              alt="Cesar Jaramillo"
               className={classes.aboutImage}
             />
           </Box>
 
           <Text mt={16}>
-            <strong>Email Developer Specializing in Klaviyo:</strong> I
-            specialize in creating high-performing email marketing campaigns
-            using Klaviyo. I help businesses maximize engagement and conversions
-            through strategic email solutions.
+            <strong>Email Developer Specializing in Klaviyo:</strong> I design
+            and build high-performing email marketing campaigns with Klaviyo,
+            helping businesses increase engagement and drive sales through
+            personalized email strategies.
           </Text>
 
           <Text mt={16}>
-            <strong>Advanced Email Automation & Segmentation:</strong> I design
-            and implement automated email flows tailored to customer behavior.
-            This includes welcome series, abandoned cart reminders, and
-            re-engagement sequences.
+            <strong>Automated Email Flows & Segmentation:</strong> I create
+            data-driven automated email workflows, including welcome sequences,
+            abandoned cart recovery, and post-purchase follow-ups, tailored to
+            enhance customer experience and maximize conversions.
           </Text>
 
           <Text mt={16}>
-            <strong>Custom Email Template Development:</strong> I build
-            responsive, visually appealing email templates that work across all
-            devices and clients. My templates follow best practices for branding
-            and performance.
+            <strong>Custom Email Template Development:</strong> I craft
+            responsive, visually appealing email templates optimized for all
+            devices and email clients, ensuring brand consistency and high
+            deliverability.
           </Text>
 
           <Text mt={16}>
-            <strong>CMS & Custom Web Development:</strong> I work extensively
-            with platforms like Shopify and WordPress to build and manage
-            content-driven websites. My coding skills allow me to implement
-            custom changes, optimize performance, and utilize APIs to extend
-            functionality beyond standard capabilities.
+            <strong>Web Development Expertise:</strong> I build and manage
+            websites on platforms like Shopify and WordPress, integrating custom
+            features, optimizing performance, and ensuring seamless user
+            experiences through clean, efficient code.
           </Text>
         </Box>
       </Container>

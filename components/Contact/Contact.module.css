@@ -7,36 +7,47 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 2rem;
-  /* background: #FFFBF2; */
   background: #11284B;
   border-radius: 12px;
   color: white;
+  text-align: center;
 }
 
 .title {
   color: var(--mantine-color-white);
-  font-family:
-    Greycliff CF,
-    var(--mantine-font-family);
+  font-family: Greycliff CF, var(--mantine-font-family);
   font-size: 32px;
   text-align: center;
 }
 
-.formButton {
-  padding: 16px 40px;
-  font-size: 22px;
-  font-weight: 600;
-  border-radius: 10px;
-  border: 2px solid #fff;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+.description {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.formButton:hover {
-  background-color: #fff;
-  color: #11284b;
-  transform: scale(1.05);
+.iconGroup {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon {
+  transition: transform 0.3s ease;
+  color: white;
+  height: 80px;
+  width: 80px;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }

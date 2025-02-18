@@ -1,96 +1,44 @@
 "use client";
 
-import { useState } from "react";
-import {
-  Box,
-  Button,
-  Group,
-  SimpleGrid,
-  Textarea,
-  TextInput,
-  Title,
-} from "@mantine/core";
-import { useForm } from "@mantine/form";
+import { Box, Title, Group, ActionIcon, Text } from "@mantine/core";
+import { IconMail, IconBrandLinkedin } from "@tabler/icons-react";
 import classes from "./Contact.module.css";
 
 const Contact = () => {
-  const [status, setStatus] = useState<"pending" | "ok" | "error" | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  const form = useForm({
-    initialValues: { name: "", email: "", subject: "", message: "" },
-  });
-
-  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    try {
-      setStatus("pending");
-      const formData = new FormData(event.currentTarget);
-      const res = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
-      });
-      if (res.status === 200) setStatus("ok");
-      else {
-        setStatus("error");
-        setError(`${res.status} ${res.statusText}`);
-      }
-    } catch (e) {
-      setStatus("error");
-      setError(String(e));
-    }
-  };
-
   return (
     <Box className={classes.contactContainer}>
-      <form className={classes.form} onSubmit={handleFormSubmit} name="contact">
-        <input type="hidden" name="form-name" value="contact" />
+      <Box className={classes.form}>
         <Title order={2} className={classes.title}>
-          Get In Touch
+          Let's Connect
         </Title>
-        <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
-          <TextInput
-            label="Name"
-            name="name"
-            variant="filled"
-            {...form.getInputProps("name")}
-          />
-          <TextInput
-            label="Email"
-            name="email"
-            variant="filled"
-            {...form.getInputProps("email")}
-          />
-        </SimpleGrid>
-        <TextInput
-          label="Subject"
-          name="subject"
-          variant="filled"
-          {...form.getInputProps("subject")}
-          mt="md"
-        />
-        <Textarea
-          label="Message"
-          name="message"
-          variant="filled"
-          {...form.getInputProps("message")}
-          mt="md"
-        />
-        <Group justify="center" mt="xl">
-          <Button
-            variant="outline"
-            size="xl"
-            className={classes.formButton}
-            disabled={status === "pending"}
-            type="submit"
+        <Text className={classes.description}>
+          Feel free to reach out via email or connect with me on LinkedIn.
+        </Text>
+        <Group className={classes.iconGroup}>
+          <a
+            className={classes.link}
+            href="mailto:cesarjdev@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Send an email to Cesar Jaramillo"
           >
-            {status === "pending" ? "Submitting..." : "Send Message"}
-          </Button>
+            <ActionIcon className={classes.icon}>
+              <IconMail />
+            </ActionIcon>
+          </a>
+          <a
+            className={classes.link}
+            href="https://www.linkedin.com/in/cesar-jaramillo-dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Connect with Cesar Jaramillo on LinkedIn"
+          >
+            <ActionIcon className={classes.icon}>
+              <IconBrandLinkedin />
+            </ActionIcon>
+          </a>
         </Group>
-        {status === "ok" && <p className={classes.success}>Message sent!</p>}
-        {status === "error" && <p className={classes.error}>Error: {error}</p>}
-      </form>
+      </Box>
     </Box>
   );
 };

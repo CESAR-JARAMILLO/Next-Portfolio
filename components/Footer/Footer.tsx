@@ -70,7 +70,8 @@ const Footer = () => {
             <Image src="/logo.svg" alt="Cesar J Dev" />
           </Link>
           <Text size="xs" c="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+            Email Developer Specializing in Klaviyo Campaigns and Web
+            Development
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
@@ -86,12 +87,26 @@ const Footer = () => {
           justify="flex-end"
           wrap="nowrap"
         >
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandLinkedin size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandGithub size={18} stroke={1.5} />
-          </ActionIcon>
+          <a
+            href="https://www.linkedin.com/in/cesar-jaramillo-dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Connect with Cesar Jaramillo on LinkedIn"
+          >
+            <ActionIcon size="lg" color="gray" variant="subtle">
+              <IconBrandLinkedin size={18} stroke={1.5} />
+            </ActionIcon>
+          </a>
+          <a
+            href="https://github.com/CESAR-JARAMILLO"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Cesar Jaramillo's GitHub profile"
+          >
+            <ActionIcon size="lg" color="gray" variant="subtle">
+              <IconBrandGithub size={18} stroke={1.5} />
+            </ActionIcon>
+          </a>
         </Group>
       </Container>
     </footer>

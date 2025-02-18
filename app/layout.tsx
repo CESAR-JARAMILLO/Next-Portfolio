@@ -23,9 +23,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cesar Jaramillo | Klaviyo Email Developer & Web Specialist",
+  title: "Cesar Jaramillo | Email & Web Developer Specializing in Klaviyo",
   description:
-    "Cesar Jaramillo is a Los Angeles-based email developer specializing in Klaviyo, crafting high-converting email campaigns, automation flows, and custom templates. Also skilled in Shopify, WordPress, and web development.",
+    "Cesar Jaramillo is a Los Angeles-based email developer specializing in Klaviyo campaigns, automation flows, and custom templates, with expertise in web development for Shopify, WordPress, and modern websites.",
 };
 
 export default function RootLayout({

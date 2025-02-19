@@ -4,6 +4,24 @@ import classes from "./Portfolio.module.css";
 
 const portfolioProjects = [
   {
+    image: "/clothing-shop.png",
+    title: "Saks Fifth Avenue: Clothing Store",
+    category: "HTML Email",
+    link: "https://cesar-jaramillo.github.io/clothing-shop-email/",
+  },
+  {
+    image: "/waves.png",
+    title: "Waves: Music Streaming Service",
+    category: "HTML Email",
+    link: "https://cesar-jaramillo.github.io/waves-email/",
+  },
+  {
+    image: "/ecamm-zoom.png",
+    title: "Ecamm-Zoom: Video Conferencing",
+    category: "HTML Email",
+    link: "https://cesar-jaramillo.github.io/ecamm-email/",
+  },
+  {
     image: "/shopify.png",
     title: "Gymshark: Shopify Store",
     category: "Shopify",
@@ -21,24 +39,6 @@ const portfolioProjects = [
     title: "Coinbase: Landing Page Clone",
     category: "HTML/CSS",
     link: "https://cesar-jaramillo.github.io/coinbase-clone/",
-  },
-  {
-    image: "/clothing-shop.png",
-    title: "Saks Fifth Avenue: Clothing Store",
-    category: "HTML Email",
-    link: "https://cesar-jaramillo.github.io/clothing-shop-email/",
-  },
-  {
-    image: "/waves.png",
-    title: "Waves: Music Streaming Service",
-    category: "HTML Email",
-    link: "https://cesar-jaramillo.github.io/waves-email/",
-  },
-  {
-    image: "/ecamm-zoom.png",
-    title: "Ecamm-Zoom: Video Conferencing",
-    category: "HTML Email",
-    link: "https://cesar-jaramillo.github.io/ecamm-email/",
   },
 ];
 

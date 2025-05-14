@@ -31,13 +31,12 @@ const Hero = () => {
                 variant="gradient"
                 gradient={{ from: "red", to: "yellow" }}
               >
-                Email & Web Developer
+                Ecommerce Developer & Specialist
               </Text>{" "}
             </Title>
 
             <Text className={classes.description} mt={30}>
-              Specializing in Klaviyo Automation, High-Converting Campaigns, and
-              Seamless Web Development
+              Building High-Performing Shopify, WooCommerce, and CMS Experiences with Conversion-Focused Design and Klaviyo Automation
             </Text>
 
             <Box className={classes.buttonGroup}>

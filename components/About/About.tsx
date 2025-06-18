@@ -23,7 +23,7 @@ const About = () => {
               variant="gradient"
               gradient={{ from: "red", to: "yellow" }}
             >
-              Ecommerce Developer & Email Marketing Specialist
+              Email Developer & Marketing Specialist
             </Text>
           </Title>
 

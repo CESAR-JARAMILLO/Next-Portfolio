@@ -35,20 +35,25 @@ const About = () => {
             />
           </Box>
 
-          <Text mt={16}>
-            <strong>Ecommerce Development & Optimization:</strong> I design and optimize high-performing Shopify, WooCommerce, and CMS storefronts, blending clean development practices with SEO, responsive design, and conversion-focused strategies.
+   <Text mt={16}>
+            <strong>Email Developer Specializing in Klaviyo:</strong> I design
+            and build high-performing email marketing campaigns with Klaviyo,
+            helping businesses increase engagement and drive sales through
+            personalized email strategies.
           </Text>
-          
+
           <Text mt={16}>
-            <strong>Shopify Theme Customization & UX Enhancements:</strong> I build and customize themes to deliver seamless mobile experiences, intuitive navigation, and high-converting product and landing pages.
+            <strong>Automated Email Flows & Segmentation:</strong> I create
+            data-driven automated email workflows, including welcome sequences,
+            abandoned cart recovery, and post-purchase follow-ups, tailored to
+            enhance customer experience and maximize conversions.
           </Text>
-          
+
           <Text mt={16}>
-            <strong>Email Marketing & Klaviyo Automation:</strong> I craft personalized, data-driven email marketing campaigns and automated flows—such as welcome sequences, abandoned cart recovery, and post-purchase follow-ups—to boost customer engagement and retention.
-          </Text>
-          
-          <Text mt={16}>
-            <strong>Custom Email Template Development:</strong> I develop responsive, brand-aligned email templates that perform across all devices and clients, enhancing deliverability, engagement, and conversion rates.
+            <strong>Custom Email Template Development:</strong> I craft
+            responsive, visually appealing email templates optimized for all
+            devices and email clients, ensuring brand consistency and high
+            deliverability.
           </Text>
 
         </Box>

@@ -7,55 +7,93 @@ const About = () => {
     <Box className={classes.aboutOuterContainer}>
       <Container size="xl" className={classes.aboutInnerContainer}>
         <Box className={classes.imageWrapperDesktop}>
-          <Image
-            src="/cesar-baldy.jpg"
-            alt="Cesar Jaramillo"
-            className={classes.aboutImage}
-          />
+          <Box className={classes.imageCollage}>
+            <Image
+              src="/cesar-birthday.jpg"
+              alt="Cesar Jaramillo"
+              className={classes.collageImage1}
+            />
+            <Image
+              src="/oc-marathon-2025.jpg"
+              alt="Cesar Jaramillo"
+              className={classes.collageImage2}
+            />
+            <Image
+              src="/cesar-guitar.jpg"
+              alt="Cesar Jaramillo"
+              className={classes.collageImage3}
+            />
+            <Image
+              src="/cesar-baldy.jpg"
+              alt="Cesar Jaramillo"
+              className={classes.collageImage4}
+            />
+          </Box>
         </Box>
 
         <Box className={classes.textContent}>
           <Title order={2} className={classes.title}>
-            Experienced{" "}
+            Hi, Here's A Little{" "}
             <Text
               component="span"
               inherit
               variant="gradient"
               gradient={{ from: "red", to: "yellow" }}
             >
-              Email Developer & Marketing Specialist
+              About Me
             </Text>
           </Title>
 
           <Box className={classes.imageWrapperMobile}>
-            <Image
-              src="/cesar-baldy.jpg"
-              alt="Cesar Jaramillo"
-              className={classes.aboutImage}
-            />
+            <Box className={classes.mobileImageCollage}>
+              <Image
+                src="/cesar-baldy.jpg"
+                alt="Cesar Jaramillo"
+                className={classes.mobileCollageImage1}
+              />
+              <Image
+                src="/cesar-baldy.jpg"
+                alt="Cesar Jaramillo"
+                className={classes.mobileCollageImage2}
+              />
+              <Image
+                src="/cesar-baldy.jpg"
+                alt="Cesar Jaramillo"
+                className={classes.mobileCollageImage3}
+              />
+              <Image
+                src="/cesar-baldy.jpg"
+                alt="Cesar Jaramillo"
+                className={classes.mobileCollageImage4}
+              />
+            </Box>
           </Box>
 
-   <Text mt={16}>
-            <strong>Email Developer Specializing in Klaviyo:</strong> I design
-            and build high-performing email marketing campaigns with Klaviyo,
-            helping businesses increase engagement and drive sales through
-            personalized email strategies.
+          <Text className={classes.introText} mt={16}>
+            A Web and Email Developer based in Los Angeles, California.
           </Text>
 
-          <Text mt={16}>
-            <strong>Automated Email Flows & Segmentation:</strong> I create
-            data-driven automated email workflows, including welcome sequences,
-            abandoned cart recovery, and post-purchase follow-ups, tailored to
-            enhance customer experience and maximize conversions.
+          <Text className={classes.bodyText} mt={20}>
+            With over 4 years of experience, I specialize in using code and
+            digital tools to help businesses grow through effective websites and
+            email marketing solutions. I'm passionate about solving problems,
+            building scalable systems, and creating experiences that drive
+            results.
           </Text>
 
-          <Text mt={16}>
-            <strong>Custom Email Template Development:</strong> I craft
-            responsive, visually appealing email templates optimized for all
-            devices and email clients, ensuring brand consistency and high
-            deliverability.
+          <Text className={classes.bodyText} mt={16}>
+            I'm also a man of God who prioritizes faith, family, and purpose in
+            everything I do. My work is driven by a desire to serve others with
+            integrity and intention.
           </Text>
 
+          <Text className={classes.bodyText} mt={16}>
+            Outside of work, I enjoy coding for fun, exploring new technologies,
+            and constantly sharpening my skills with side projects. When I'm not
+            at the keyboard, you'll likely find me outdoors training for
+            marathons, spending time with loved ones, or relaxing with my
+            classical guitar and favorite pieces of classical music.
+          </Text>
         </Box>
       </Container>
     </Box>

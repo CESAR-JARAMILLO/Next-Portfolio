@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Box, Paper, Text, Title } from "@mantine/core";
 import classes from "./PortfolioCard.module.css";
+import { usePostHogTracking } from "@/hooks/usePostHogTracking";
 
 interface PortfolioCardProps {
   image: string;
@@ -20,11 +21,16 @@ const PortfolioCard = ({
 }: PortfolioCardProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement | null>(null);
+  const { trackProjectView, trackLinkClick } = usePostHogTracking();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+          // Track project view when it becomes visible
+          trackProjectView(title, category);
+        }
       },
       { threshold: 0.3 }
     );
@@ -34,7 +40,15 @@ const PortfolioCard = ({
     return () => {
       if (cardRef.current) observer.unobserve(cardRef.current);
     };
-  }, []);
+  }, [isVisible, title, category, trackProjectView]);
+
+  const handleProjectClick = () => {
+    trackLinkClick("portfolio_project", link, {
+      project_name: title,
+      project_category: category,
+      has_password: !!password,
+    });
+  };
 
   return (
     <a
@@ -42,6 +56,7 @@ const PortfolioCard = ({
       target="_blank"
       rel="noopener noreferrer"
       className={classes.cardLink}
+      onClick={handleProjectClick}
     >
       <Paper
         ref={cardRef}

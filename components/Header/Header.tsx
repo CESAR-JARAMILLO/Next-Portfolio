@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Burger, Container, Group, Image } from "@mantine/core";
 import Link from "next/link";
 import classes from "./Header.module.css";
+import { usePostHogTracking } from "@/hooks/usePostHogTracking";
 
 const links = [
   { link: "#home", label: "Home" },
@@ -14,10 +15,24 @@ const links = [
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { trackButtonClick } = usePostHogTracking();
 
-  const handleLinkClick = (link: string) => {
+  const handleLinkClick = (link: string, label: string) => {
+    trackButtonClick("navigation_click", {
+      navigation_item: label,
+      navigation_link: link,
+      menu_type: menuOpen ? "mobile" : "desktop",
+    });
     document.querySelector(link)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
+  };
+
+  const handleMenuToggle = () => {
+    trackButtonClick("menu_toggle", {
+      menu_state: menuOpen ? "close" : "open",
+      menu_type: "mobile",
+    });
+    setMenuOpen((prev) => !prev);
   };
 
   return (
@@ -35,7 +50,7 @@ const Header = () => {
               className={classes.link}
               onClick={(e) => {
                 e.preventDefault();
-                handleLinkClick(link.link);
+                handleLinkClick(link.link, link.label);
               }}
             >
               {link.label}
@@ -47,7 +62,7 @@ const Header = () => {
           color={"white"}
           className={classes.burger}
           opened={menuOpen}
-          onClick={() => setMenuOpen((prev) => !prev)}
+          onClick={handleMenuToggle}
           size="md"
         />
       </Container>
@@ -63,7 +78,7 @@ const Header = () => {
               className={classes.menuLink}
               onClick={(e) => {
                 e.preventDefault();
-                handleLinkClick(link.link);
+                handleLinkClick(link.link, link.label);
               }}
             >
               {link.label}

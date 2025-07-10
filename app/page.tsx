@@ -1,11 +1,17 @@
+"use client";
+
 import Hero from "@/components/Hero/Hero";
 import styles from "./page.module.css";
 import Portfolio from "@/components/Portfolio/Portfolio";
 import About from "@/components/About/About";
 import Skills from "@/components/Skills/Skills";
 import Contact from "@/components/Contact/Contact";
+import { usePostHogTracking } from "@/hooks/usePostHogTracking";
 
 export default function Home() {
+  // Initialize PostHog tracking
+  usePostHogTracking();
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>

@@ -4,7 +4,7 @@ import Hero from "@/components/Hero/Hero";
 import styles from "./page.module.css";
 import Portfolio from "@/components/Portfolio/Portfolio";
 import About from "@/components/About/About";
-import Skills from "@/components/Skills/Skills";
+import SkillsSection from "@/components/Skills/SkillsSection";
 import Contact from "@/components/Contact/Contact";
 import { usePostHogTracking } from "@/hooks/usePostHogTracking";
 
@@ -19,7 +19,7 @@ export default function Home() {
           <Hero />
         </section>
         <section id="skills">
-          <Skills />
+          <SkillsSection />
         </section>
         <section id="about">
           <About />

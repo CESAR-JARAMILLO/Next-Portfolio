@@ -4,6 +4,25 @@ import classes from "./Portfolio.module.css";
 
 const portfolioProjects = [
   {
+    image: "/bizmorph.png",
+    title: "Bizmorph: Marketing Agency",
+    category: "Wordpress",
+    link: "https://bizmorph.com/",
+  },
+  {
+    image: "/shopify.png",
+    title: "Gymshark: Shopify Store",
+    category: "Shopify",
+    password: "gymshark",
+    link: "https://gymsharkclothing.myshopify.com/",
+  },
+  {
+    image: "/coinbase.png",
+    title: "Coinbase: Landing Page Clone",
+    category: "HTML/CSS",
+    link: "https://coinbase-clone-bhs6njgl7-cesarjaramillos-projects.vercel.app/",
+  },
+  {
     image: "/clothing-shop.png",
     title: "Saks Fifth Avenue: Clothing Store",
     category: "HTML Email",
@@ -20,25 +39,6 @@ const portfolioProjects = [
     title: "Ecamm-Zoom: Video Conferencing",
     category: "HTML Email",
     link: "https://cesar-jaramillo.github.io/ecamm-email/",
-  },
-  {
-    image: "/shopify.png",
-    title: "Gymshark: Shopify Store",
-    category: "Shopify",
-    password: "gymshark",
-    link: "https://gymsharkclothing.myshopify.com/",
-  },
-  {
-    image: "/bizmorph.png",
-    title: "Bizmorph: Marketing Agency",
-    category: "Wordpress",
-    link: "https://bizmorph.com/",
-  },
-  {
-    image: "/coinbase.png",
-    title: "Coinbase: Landing Page Clone",
-    category: "HTML/CSS",
-    link: "https://cesar-jaramillo.github.io/coinbase-clone/",
   },
 ];
 

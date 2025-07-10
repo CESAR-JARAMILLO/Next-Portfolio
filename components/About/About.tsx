@@ -33,7 +33,7 @@ const About = () => {
 
         <Box className={classes.textContent}>
           <Title order={2} className={classes.title}>
-            Hi, Here's A Little{" "}
+            Here's A Little{" "}
             <Text
               component="span"
               inherit
@@ -47,17 +47,17 @@ const About = () => {
           <Box className={classes.imageWrapperMobile}>
             <Box className={classes.mobileImageCollage}>
               <Image
-                src="/cesar-baldy.jpg"
+                src="/cesar-birthday.jpg"
                 alt="Cesar Jaramillo"
                 className={classes.mobileCollageImage1}
               />
               <Image
-                src="/cesar-baldy.jpg"
+                src="/oc-marathon-2025.jpg"
                 alt="Cesar Jaramillo"
                 className={classes.mobileCollageImage2}
               />
               <Image
-                src="/cesar-baldy.jpg"
+                src="/cesar-guitar.jpg"
                 alt="Cesar Jaramillo"
                 className={classes.mobileCollageImage3}
               />

@@ -70,8 +70,8 @@ const Footer = () => {
             <Image src="/logo.svg" alt="Cesar J Dev" />
           </Link>
           <Text size="xs" c="dimmed" className={classes.description}>
-            Email Developer Specializing in Klaviyo Campaigns and Web
-            Development
+            Web Developer with a focus on performance-driven sites and
+            Klaviyo-powered email marketing.
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>

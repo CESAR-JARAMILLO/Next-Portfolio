@@ -31,12 +31,14 @@ const Hero = () => {
                 variant="gradient"
                 gradient={{ from: "red", to: "yellow" }}
               >
-                Email Dev & Automation Specialist
+                Web Dev & Automation Specialist
               </Text>{" "}
             </Title>
 
             <Text className={classes.description} mt={30}>
-              Creating High-Converting Email Templates and Automated Campaigns with Klaviyo and Mailchimp for Shopify, WooCommerce, and CMS-Based Stores
+              Developing and automating websites on WordPress, Shopify, and
+              custom CMS platforms — with powerful email marketing strategies
+              built in using Klaviyo and Mailchimp.
             </Text>
 
             <Box className={classes.buttonGroup}>

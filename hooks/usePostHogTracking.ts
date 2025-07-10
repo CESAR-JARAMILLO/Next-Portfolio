@@ -3,6 +3,9 @@ import posthog from '../instrumentation-client';
 
 export const usePostHogTracking = () => {
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     // Track page views
     posthog.capture('page_viewed', {
       page: window.location.pathname,
@@ -41,6 +44,8 @@ export const usePostHogTracking = () => {
 
   // Function to track button clicks
   const trackButtonClick = (buttonName: string, properties?: Record<string, any>) => {
+    if (typeof window === 'undefined') return;
+    
     posthog.capture('button_clicked', {
       button_name: buttonName,
       page: window.location.pathname,
@@ -50,6 +55,8 @@ export const usePostHogTracking = () => {
 
   // Function to track link clicks
   const trackLinkClick = (linkName: string, linkUrl: string, properties?: Record<string, any>) => {
+    if (typeof window === 'undefined') return;
+    
     posthog.capture('link_clicked', {
       link_name: linkName,
       link_url: linkUrl,
@@ -60,6 +67,8 @@ export const usePostHogTracking = () => {
 
   // Function to track portfolio project views
   const trackProjectView = (projectName: string, projectCategory: string) => {
+    if (typeof window === 'undefined') return;
+    
     posthog.capture('project_viewed', {
       project_name: projectName,
       project_category: projectCategory,

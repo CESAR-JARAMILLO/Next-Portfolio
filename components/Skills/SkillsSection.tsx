@@ -13,6 +13,7 @@ const skills = [
   { name: "Sass", icon: "/sass.svg", category: "development" },
   { name: "JavaScript", icon: "/javascript.svg", category: "development" },
   { name: "Python", icon: "/python.svg", category: "development" },
+  { name: "PHP", icon: "/php.svg", category: "development" },
   { name: "Liquid", icon: "/liquid.svg", category: "development" },
   { name: "Git", icon: "/git.svg", category: "development" },
   { name: "Figma", icon: "/figma.svg", category: "design" },

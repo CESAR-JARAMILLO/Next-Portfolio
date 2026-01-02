@@ -78,7 +78,7 @@ const Footer = () => {
       </Container>
       <Container className={classes.afterFooter}>
         <Text c="dimmed" size="sm">
-          © 2020 Cesar J Dev. All rights reserved.
+          © 2026 Cesar J Dev. All rights reserved.
         </Text>
 
         <Group

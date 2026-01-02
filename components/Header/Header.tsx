@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Burger, Container, Group, Image } from "@mantine/core";
 import Link from "next/link";
 import classes from "./Header.module.css";
-import { usePostHogTracking } from "@/hooks/usePostHogTracking";
 
 const links = [
   { link: "#home", label: "Home" },
@@ -15,23 +14,13 @@ const links = [
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { trackButtonClick } = usePostHogTracking();
 
-  const handleLinkClick = (link: string, label: string) => {
-    trackButtonClick("navigation_click", {
-      navigation_item: label,
-      navigation_link: link,
-      menu_type: menuOpen ? "mobile" : "desktop",
-    });
+  const handleLinkClick = (link: string) => {
     document.querySelector(link)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
   };
 
   const handleMenuToggle = () => {
-    trackButtonClick("menu_toggle", {
-      menu_state: menuOpen ? "close" : "open",
-      menu_type: "mobile",
-    });
     setMenuOpen((prev) => !prev);
   };
 
@@ -50,7 +39,7 @@ const Header = () => {
               className={classes.link}
               onClick={(e) => {
                 e.preventDefault();
-                handleLinkClick(link.link, link.label);
+                handleLinkClick(link.link);
               }}
             >
               {link.label}
@@ -78,7 +67,7 @@ const Header = () => {
               className={classes.menuLink}
               onClick={(e) => {
                 e.preventDefault();
-                handleLinkClick(link.link, link.label);
+                handleLinkClick(link.link);
               }}
             >
               {link.label}

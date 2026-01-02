@@ -6,11 +6,8 @@ import Portfolio from "@/components/Portfolio/Portfolio";
 import About from "@/components/About/About";
 import SkillsSection from "@/components/Skills/SkillsSection";
 import Contact from "@/components/Contact/Contact";
-import { usePostHogTracking } from "@/hooks/usePostHogTracking";
 
 export default function Home() {
-  // Initialize PostHog tracking
-  usePostHogTracking();
 
   return (
     <div className={styles.page}>

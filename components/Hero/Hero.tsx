@@ -4,24 +4,10 @@ import { Button, Container, Text, Title, Image, Box } from "@mantine/core";
 import { IconPlayerPlay } from "@tabler/icons-react";
 import Link from "next/link";
 import classes from "./Hero.module.css";
-import { usePostHogTracking } from "@/hooks/usePostHogTracking";
 
 const Hero = () => {
-  const { trackButtonClick } = usePostHogTracking();
-
   const handleVideoClick = () => {
-    trackButtonClick("watch_intro_video", {
-      location: "hero_section",
-      button_type: "secondary",
-    });
     console.log("Open intro video modal here.");
-  };
-
-  const handleContactClick = () => {
-    trackButtonClick("contact_me", {
-      location: "hero_section",
-      button_type: "primary",
-    });
   };
 
   return (
@@ -56,13 +42,12 @@ const Hero = () => {
             </Text>
 
             <Box className={classes.buttonGroup}>
-              <Link href="#contact" passHref>
+              <Link href="#contact">
                 <Button
                   variant="gradient"
                   gradient={{ from: "red", to: "yellow" }}
                   size="xl"
                   className={classes.control}
-                  onClick={handleContactClick}
                 >
                   Contact Me
                 </Button>

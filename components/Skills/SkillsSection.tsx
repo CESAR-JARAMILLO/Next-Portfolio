@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import classes from "./SkillsSection.module.css";
-import { usePostHogTracking } from "@/hooks/usePostHogTracking";
 
 const skills = [
   { name: "Klaviyo", icon: "/klaviyo.svg", category: "email" },
@@ -37,7 +36,6 @@ const categories = [
 
 const SkillsSection = () => {
   const [activeTab, setActiveTab] = useState("development");
-  const { trackButtonClick } = usePostHogTracking();
 
   // Map automation skills into the email tab for now
   const filteredSkills = skills.filter((skill) => {
@@ -47,22 +45,12 @@ const SkillsSection = () => {
     return skill.category === activeTab;
   });
 
-  const handleTabClick = (tabKey: string, tabLabel: string) => {
+  const handleTabClick = (tabKey: string) => {
     setActiveTab(tabKey);
-    trackButtonClick("skills_tab_clicked", {
-      tab_name: tabLabel,
-      tab_key: tabKey,
-      section: "skills",
-    });
   };
 
-  const handleSkillCardClick = (skillName: string, skillCategory: string) => {
-    trackButtonClick("skill_card_clicked", {
-      skill_name: skillName,
-      skill_category: skillCategory,
-      active_tab: activeTab,
-      section: "skills",
-    });
+  const handleSkillCardClick = () => {
+    // No tracking needed
   };
 
   return (
@@ -77,7 +65,7 @@ const SkillsSection = () => {
             className={`${classes.tabButton} ${
               activeTab === cat.key ? classes.active : ""
             }`}
-            onClick={() => handleTabClick(cat.key, cat.label)}
+            onClick={() => handleTabClick(cat.key)}
             type="button"
           >
             {cat.label}
@@ -89,7 +77,7 @@ const SkillsSection = () => {
           <div
             className={classes.skillCard}
             key={skill.name}
-            onClick={() => handleSkillCardClick(skill.name, skill.category)}
+            onClick={handleSkillCardClick}
           >
             <div className={classes.iconWrapper}>
               <Image
